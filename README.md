@@ -1,6 +1,7 @@
 ### Code racing
-This site allows a user to create rooms, in which other join to race to solve the programming problem
+This site allows a user to create rooms, in which other join to race to solve the programming problem in python. This can be used in classrooms to help teachers and teach students how to code
 
+### projects goals
 ### 1. user is able to create room
 - user (teacher) can create a room
 	- room has individual join code
