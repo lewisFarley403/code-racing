@@ -1,0 +1,16 @@
+.terminal{
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  padding: 15px;
+  height:60%;
+  overflow-y: auto;
+}
+.info{
+  display: flex;
+  flex-direction: row;
+  margin:100px
+}
+.infochild{
+  flex:1;
+}

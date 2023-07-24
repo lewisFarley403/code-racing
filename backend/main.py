@@ -2,23 +2,25 @@ import random
 from flask import Flask, render_template, request, jsonify, redirect
 import sqlite3
 import time
-from flask_socketio import SocketIO
 
 
 # https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask
 app = Flask(__name__, static_folder="../frontend/reactfrontend/build/static", template_folder="../frontend/reactfrontend/build"
             )
-socketio = SocketIO(app)
 
+
+# @app.route("/")
+# def hello():
+#     return render_template('index.html')
+
+
+# @app.route('/codescreen')
+# def toMain():
+#     return redirect('/')
 
 @app.route("/")
 def hello():
-    return render_template('index.html')
-
-
-@app.route('/codescreen')
-def toMain():
-    return redirect('/')
+    return 'i am working'
 
 
 @app.route('/api/test')
@@ -105,7 +107,6 @@ def registerPlayer():
             return jsonify({'error': 'Name is already in use in this group, please chose another one.', 'gamedata': ''})
         cursor.execute(
             'INSERT INTO tblPlayer (displayName,groupID) VALUES (?,?)', (uName, groupID))
-    socketio.emit(f'{gamecode}playerjoin', {'uname': uName})
     return jsonify({'error': '', 'gamedata': gameData})
 
 
